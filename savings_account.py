@@ -9,10 +9,10 @@ class Savings_account(Account):
         self.withdrawal_number = withdrawal_number
 
     def withdraw(self, amount):
-        if self.withdrawal_number < self._withdrawal_limit:
+        if self.withdrawal_number < self._withdrawal_limit and amount - self._balance > 0:
             self._balance -= amount
             self.withdrawal_number = self.withdrawal_number + 1
+            print(f"You have successfully withdrawn £{amount}, your new balance is {self._balance}")
         else:
             print(f"You have reached your limit of {self._withdrawal_limit} withdrawals this month")
-    def getbalance(self):
-        return self._balance
+

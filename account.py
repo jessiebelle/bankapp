@@ -7,6 +7,7 @@ class Account:
 
     def withdraw(self, amount):
         self._balance -= amount
+        print(f"You have successfully withdrawn £{amount}, your new balance is {self._balance}")
 
-    def getbalance(self):
-        return self._balance
+    def get_balance(self):
+        return f"Your current balance is £{self._balance}"

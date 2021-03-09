@@ -10,11 +10,11 @@ class Current_account(Account):
     def send_money(self, amount, recipient):
         if amount < self._spend_limit:
             self._balance -= amount
-            print(f"you have sent {amount} to {recipient}")
+            print(f"you have sent £{amount} to {recipient}")
         else:
-            print(f"you cannot send {amount}, as it is larger than your spending limit of {self._spend_limit}")
+            print(f"Could not send £{amount} to {recipient}, as it is larger than your spending limit of £{self._spend_limit}")
 
     def receive_money(self, amount, recipient):
 
         self._balance += amount
-        print(f"you have received {amount} from {recipient}")
+        print(f"you have received £{amount} from {recipient}")
