@@ -6,5 +6,4 @@ class Person:
     def get_name(self):
         print(self.first_name)
         print(self.surname)
-    def greeting(self):
-        print(f"Hi {self.first_name},")
+
