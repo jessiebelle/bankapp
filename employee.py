@@ -8,9 +8,9 @@ class Employee(Person):
 
 
     def greeting(self):
-        print(f"Hi {self.first_name}, welcome back to work. Your employee number is {self.employee_id}")
+        return f"Hi {self.first_name}, welcome back to work. Your employee number is {self.employee_id}"
 
     def get_profile(self):
-        print(f"Name: {self.first_name} {self.surname}\nAge: {self.age}\nEmployee ID:{self.employee_id} ")
+        return f"Name: {self.first_name} {self.surname}\nAge: {self.age}\nEmployee ID:{self.employee_id} "
 
 

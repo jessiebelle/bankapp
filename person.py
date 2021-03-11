@@ -9,3 +9,4 @@ class Person:
         print(self.surname)
 
 
+#set these private and decorators 

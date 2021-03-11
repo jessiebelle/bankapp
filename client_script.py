@@ -8,7 +8,7 @@ from datetime import date
 #each greeting method is encapsulated in the relevant class
 #Inheriting Employee from Person is polymorphism as we are changing the data type
 jessie = Employee("Jessie", "auguste", "25", "2747373783")
-jessie.get_profile()
+print(jessie.get_profile())
 asia = Customer("Asia", "Sharif", "23", "3454354")
 print(jessie.greeting())
 print(asia.greeting())
@@ -25,4 +25,4 @@ asia_current.send_money(3000, "jackie")
 asia_current.receive_money(50, "jessie")
 print(asia_current.get_balance())
 
-print(date.today())
+
