@@ -15,9 +15,9 @@ class InsufficientFunds(Exception):
 #     super().__init__(self.message)
 
 # while True:
-#     try:
+#     if:
 #         balance < amount:
 #         raise InsufficientFunds
 #     except:
-#         print("Your have withdrawn: ", balance)
+#         print("Your have withdrawn: ", str(self.balance))
 

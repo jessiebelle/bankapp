@@ -14,7 +14,7 @@ account2 = PremiumAccount("Ben", 10000, 3, 0.05)
 print(account2)
 
 # Savings account
-account3 = SavingsAccount("Sally", 500000, 2.50, 3.25, 50000, 3)
+account3 = SavingsAccount("Sally", 500000, 2.50, 3.25, 5)
 print(account3)
 
 

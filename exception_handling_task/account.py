@@ -14,8 +14,7 @@ class Account:
         Account.number_created += 1
 
     def __str__(self):
-         return "{}'s bank balance is {:.2f}, sort code: {} account number: {}".format(self._name,
-                 self._balance, self._sortcode, self._account_number)
+         return f"{self._name}'s bank balance is {self._balance:.2f}, sort code: {self._sortcode}, account number: {self._account_number}"
 
     def get_sortcode(self):
         return self._sortcode

@@ -1,9 +1,8 @@
-from account import Account
 from employee import Employee
 from customer import Customer
-from savings_account import Savings_account
+from exception_handling_task.savings_account import Savings_account
 from current_account import Current_account
-from datetime import date
+
 #Employee and Customer classes both inherit from Person class
 #each greeting method is encapsulated in the relevant class
 #Inheriting Employee from Person is polymorphism as we are changing the data type

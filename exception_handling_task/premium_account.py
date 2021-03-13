@@ -3,15 +3,15 @@ from account import Account
 
 class PremiumAccount(Account):
     def __init__(self, name, balance, withdrawal_fee, interest):
-        Account.__init__(self, name, balance)
+        Account.__init__(self, name, balance) # changed from super to account.__init___git 
         self.withdrawal_fee = withdrawal_fee
         self.interest = interest
         self.withdrawals = 0
 
     def __str__(self):
         super().__str__()
-        return "{}'s bank balance is {:.2f} withdrawal fee: {} sort code: {} account number: {}".format(self._name,
-            self._balance, self.interest, self.withdrawal_fee, self.withdrawals, self._sortcode, self._account_number)
+        return f"{self._name}'s bank balance is {self._balance:.2f} withdrawal fee: {self.withdrawal_fee}, interest: " \
+               f"{self.interest}, withdrawals: {self.withdrawals}, sort code: {self._sortcode}, account number: {self._account_number}"
 
     def make_withdrawal(self, amount):
         self._balance -= amount
