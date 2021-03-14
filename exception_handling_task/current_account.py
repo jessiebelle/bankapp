@@ -28,17 +28,27 @@ class CurrentAccount(Account):
         return f"you have received £{amount} from {recipient}"
 
     def make_withdrawal(self, amount):
-        try:
-            self._balance -= amount
-            if amount > self._balance:
-                raise InsufficientFunds(amount)
-        finally:
+
+        if amount > self._balance:
+            raise InsufficientFunds("transaction denied to withdraw: " + str(amount))
+        else:
             self._balance -= amount
 
 
 if __name__ == "__main__":
-    a1 = CurrentAccount("Michael", 1000, -200, 500)
-    # a1.make_withdrawal(150)
+    a1 = CurrentAccount("Michael", 10, -200, 500)
+        # a1.make_withdrawal(150)
+    print(a1)
+    try:
+        a1.make_withdrawal(50)
+    except InsufficientFunds as my_error:
+            print(str(my_error))
+    print(a1.get_balance())
+# adding a built in exception
+    try:
+        a1.make_withdrawal("fifty")
+    except TypeError as type_error:
+        print("Error:" + str(type_error))
     print(a1)
 
 

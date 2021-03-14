@@ -1,13 +1,6 @@
 # from account import Account
 # from current_account import CurrentAccount
 
-class InsufficientFunds(Exception):
-    def __init__(self, *args):
-        if args:
-            self.msg = args
-        else:
-            self.msg = None
-
 class MaxNumberOfWithdrawals(Exception):
     def __init__(self, *args):
         if args:
