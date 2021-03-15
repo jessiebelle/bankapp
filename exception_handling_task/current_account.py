@@ -4,16 +4,14 @@ from account import Account
 
 class CurrentAccount(Account):
     def __init__(self, name, balance, overdraft, spend_limit):
-        Account.__init__(self, name, balance) # changed from super to account.__init___
+        Account.__init__(self, name, balance)
         self._overdraft = overdraft
-        self._spend_limit = spend_limit # move to the exceptions
+        self._spend_limit = spend_limit
 
     def __str__(self):
         super().__str__()
-        #return "{}'s bank balance is {:.2f} withdrawal fee: {} sort code: {} account number: {}".format(self._name,
-        #    self._balance, self._overdraft, self._spend_limit, self._sortcode, self._account_number)
-        return f"{self._name}'s bank balance is {self._balance:.2f}, overdraft:{self._overdraft}, spend limit: {self._spend_limit}, sort code: {self._sortcode}, account number: {self._account_number}"
-
+        return f"{self._name}'s bank balance is {self._balance:.2f}, overdraft:{self._overdraft:.2f}, spend limit: " \
+               f"{self._spend_limit:.2f}, sort code: {self._sortcode}, account number: {self._account_number}"
 
     def send_money(self, amount, recipient):
         if amount < self._spend_limit:
@@ -28,11 +26,9 @@ class CurrentAccount(Account):
         return f"you have received £{amount} from {recipient}"
 
     def make_withdrawal(self, amount):
-
-        if amount > self._balance:
+        if (self._balance - amount) <= self._overdraft:
             raise InsufficientFunds("transaction denied to withdraw: " + str(amount))
-        else:
-            self._balance -= amount
+        self._balance -= amount
 
 
 if __name__ == "__main__":

@@ -4,7 +4,6 @@ import random
 
 class Account:
     number_created = 0
-    # constructor gets called automatically
 
     def __init__(self, name, balance):
         self._name = name
@@ -22,15 +21,11 @@ class Account:
     def get_account_num(self):
         return self._account_number
 
-        # make a statement class  (for printing)
-        #return "Your details are as follows:\nSort Code: {} Bank Account Number: {}".format(self._sortcode, self._account_number)
-
     def make_deposit(self, amount):
         self._balance += amount
 
     def make_withdrawal(self, amount):
         self._balance -= amount
-        self._balance -= self._withdrawal_fee
 
     def get_balance(self):
         return self._balance
