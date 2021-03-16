@@ -30,6 +30,9 @@ class CurrentAccount(Account):
             raise InsufficientFunds("transaction denied to withdraw: " + str(amount))
         self._balance -= amount
 
+    @classmethod
+    def get_count(cls):
+        return CurrentAccount.number_created
 
 if __name__ == "__main__":
     a1 = CurrentAccount("Michael", 10, -200, 500)
@@ -46,5 +49,6 @@ if __name__ == "__main__":
     except TypeError as type_error:
         print("Error:" + str(type_error))
     print(a1)
+    print(CurrentAccount.number_created)
 
 

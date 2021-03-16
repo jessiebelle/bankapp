@@ -1,8 +1,8 @@
 import random
-# import abc ? to make metaclass
+from abc import *
 
 
-class Account:
+class Account(metaclass=ABCMeta):
     number_created = 0
 
     def __init__(self, name, balance):
@@ -24,8 +24,15 @@ class Account:
     def make_deposit(self, amount):
         self._balance += amount
 
+    # def __add__(self, amount):
+    #     self._balance += amount
+    #     return self._balance
+
     def make_withdrawal(self, amount):
         self._balance -= amount
 
     def get_balance(self):
         return self._balance
+
+
+
